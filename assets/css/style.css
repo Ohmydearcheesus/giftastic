@@ -1,0 +1,67 @@
+* {
+  color: white;
+}
+
+body {
+  background-color: rgb(50, 50, 50);
+  font-size: 1.2em;
+}
+
+h2 {
+  font-size: 5em;
+  font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  background-image: repeating-linear-gradient(
+    to left,
+    rgb(255, 113, 113),
+    rgb(209, 54, 209),
+    rgb(132, 110, 148),
+    rgb(181, 181, 255),
+    rgb(148, 180, 148),
+    rgb(255, 255, 204),
+    rgb(255, 228, 179),
+    rgb(255, 187, 187)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: rainbow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow {
+  from {
+    background-position: -500px;
+  }
+  to {
+    background-position: 500px;
+  }
+}
+
+h2 {
+  border-bottom: 2px solid white;
+}
+
+.buttons {
+  border-top: 2px solid white;
+}
+
+button {
+  background-color: light-grey;
+  color: rgb(50, 50, 50);
+}
+
+input {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  border-radius: 2px 0px 0px 2px;
+  line-height: 150%;
+  color: rgb(50, 50, 50);
+}
+
+#submit {
+  background-color: lightskyblue;
+  color: white;
+  border-radius: 0px 2px 2px 0px;
+}

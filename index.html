@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/layout.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Changa+One&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Alegreya+SC:700,800,900&display=swap"
+    rel="stylesheet"
+  />
+  <title>Giftastic</title>
+</head>
+
+<body>
+  <h2>GIFTASTIC</h2>
+  <div class="content">
+    <!--Container for search bar & buttons-->
+    <div class="sidebar">
+      <!--Container for search bar-->
+      <div class="search-bar">
+        <input id="query" type="text" /><br />
+        <div id="submit">Go!</div>
+      </div>
+
+      <!--Container for all buttons-->
+      <div class="buttons" id="buttons"></div>
+    </div>
+
+    <!--Container for all appended gifs-->
+    <div class="gifs" id="gifs">
+      <p>
+        Click a button from the left to get ten random animated images related
+        to that button. <br />
+        Type in the search bar and click "Go!" to add a new button!
+      </p>
+    </div>
+  </div>
+  <!--COPY PASTA AJAX SETUP-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/javascript/logic.js"></script>
+</body>
