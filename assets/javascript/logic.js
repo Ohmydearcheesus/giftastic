@@ -18,15 +18,24 @@ var buttonsList = [
 function renderButtons() {
   for (var i = 0; i < buttonsList.length; i++) {
     var button = $("<button>");
+    button.addClass("buttons");
     button.text(buttonsList[i]);
     $("#buttons").append(button);
   }
+}
+
+// Attaches on-click listeners with api search functions to each of the rendered buttons
+function activateButtons() {
+  $(".buttons").on("click", function() {
+    alert("hello!");
+  });
 }
 
 // After the DOM loads......................................
 
 // Load all the buttons
 renderButtons();
+activateButtons();
 
 // Update buttons when a new button is added to the list of buttons
 $("#submit").on("click", function() {
@@ -36,6 +45,8 @@ $("#submit").on("click", function() {
   buttonsList.push(search);
   $("#buttons").empty();
   renderButtons();
+
+  activateButtons();
 });
 
 // Display 10 gifs related to the clicked button

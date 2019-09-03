@@ -8,10 +8,10 @@ body {
 }
 
 h2 {
-  font-size: 5em;
-  font-family: "Alegreya SC", serif;
-  font-weight: 700;
-  letter-spacing: 0.5em;
+  font-family: "Cinzel", serif;
+  font-size: 6em;
+  font-weight: 500;
+  letter-spacing: 0.4em;
   background-image: repeating-linear-gradient(
     to left,
     rgb(255, 113, 113),
@@ -43,7 +43,7 @@ h2 {
   border-bottom: 2px solid white;
 }
 
-.buttons {
+#buttons {
   border-top: 2px solid white;
 }
 
