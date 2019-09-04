@@ -18,7 +18,7 @@
     <div class="sidebar">
       <!--Container for search bar-->
       <div class="search-bar">
-        <input id="query" type="text" /><br />
+        <input id="query" type="text" placeholder="Search" /><br />
         <div id="submit">Go!</div>
       </div>
 
@@ -28,11 +28,12 @@
 
     <!--Container for all appended gifs-->
     <div class="gifs" id="gifs">
-      <p>
+      <p id="instructions">
         Click a button from the left to get ten random animated images related
         to that button. <br />
         Type in the search bar and click "Go!" to add a new button!
       </p>
+      <div id="gif-container"></div>
     </div>
   </div>
   <!--COPY PASTA AJAX SETUP-->

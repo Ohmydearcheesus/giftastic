@@ -21,14 +21,19 @@ h2 {
 
 .sidebar {
   width: 30%;
+  min-width: 30%;
 }
 
 .gifs {
-  /* width: 75%; */
-  margin-left: 10%;
+  /* max-width: 70%; */
+  margin-left: 5%;
   text-align: center;
-  align-content: center;
+  /* align-content: center; */
   align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search-bar {
@@ -66,5 +71,10 @@ button {
 }
 
 img {
-  max-width: 40%;
+  margin: 20px;
+}
+
+#instructions {
+  text-align: center;
+  width: 100%;
 }

@@ -1,11 +1,13 @@
 // Global Functions and Variables...........................
 
+var searchResult;
+
 // List of starter buttons
 var buttonsList = [
   "cat",
   "fail",
   "spongebob",
-  "parrot",
+  "sadako",
   "squirrel",
   "1964 addams",
   "super smash bros",
@@ -24,10 +26,46 @@ function renderButtons() {
   }
 }
 
+// Prints all Gifs to screen
+function renderGifs() {
+  for (var i = 0; i < searchResult.data.length; i++) {
+    var image = $("<img>");
+    image.addClass("image");
+    image.attr("src", searchResult.data[i].images.fixed_height_small_still.url);
+    image.attr("value", searchResult.data[i].images.fixed_height_small.url);
+    $("#gif-container").prepend(image);
+  }
+  activateGif();
+}
+
 // Attaches on-click listeners with api search functions to each of the rendered buttons
 function activateButtons() {
   $(".buttons").on("click", function() {
-    alert("hello!");
+    // API Search request:
+    var query = $(this).text();
+    var queryURL =
+      "https://api.giphy.com/v1/gifs/search?api_key=ix9jT2sQ84XR1V2YYWEUZxeTGBq42VeM&q=" +
+      query +
+      "&limit=10&offset=0&rating=G&lang=en";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+      searchResult = response;
+      renderGifs();
+    });
+  });
+}
+
+// Animates the Gifs
+function activateGif() {
+  $(".image").on("click", function() {
+    var temp1 = $(this).attr("src");
+    var temp2 = $(this).attr("value");
+    $(this).attr("src", temp2);
+    $(this).attr("value", temp1);
   });
 }
 
@@ -45,21 +83,5 @@ $("#submit").on("click", function() {
   buttonsList.push(search);
   $("#buttons").empty();
   renderButtons();
-
   activateButtons();
 });
-
-// Display 10 gifs related to the clicked button
-
-// COPY PASTA AJAX QUERY
-
-// // Example queryURL for Giphy API
-// var queryURL =
-//   "https://api.giphy.com/v1/gifs/trending?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9";
-
-// $.ajax({
-//   url: queryURL,
-//   method: "GET"
-// }).then(function(response) {
-//   console.log(response);
-// });
